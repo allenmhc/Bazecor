@@ -230,6 +230,22 @@ class KeyboardSettings extends React.Component {
     this.props.setKbData(this.state);
   };
 
+  setMinimumHoldTime = async value => {
+    await this.setState(state => ({
+      qukeysMinimumHoldTime: value,
+      modified: true,
+    }));
+    this.props.setKbData(this.state);
+  };
+
+  setMaxIntervalForTapRepeat = async value => {
+    await this.setState(state => ({
+      qukeysMaxIntervalForTapRepeat: value,
+      modified: true,
+    }));
+    this.props.setKbData(this.state);
+  };
+  
   setOverlapThreshold = async value => {
     await this.setState(state => ({
       qukeysOverlapThreshold: value,
@@ -417,6 +433,8 @@ class KeyboardSettings extends React.Component {
       ledBrightnessUG,
       ledIdleTimeLimit,
       qukeysHoldTimeout,
+      qukeysMinimumHoldTime,
+      qukeysMaxIntervalForTapRepeat,
       qukeysOverlapThreshold,
       SuperTimeout,
       // SuperRepeat,
@@ -642,7 +660,63 @@ class KeyboardSettings extends React.Component {
                         <span className="tagsfix">Less</span>
                       </Col>
                       <Col xs={8} md={10} className="px-2">
-                        <Slider min={1} max={255} value={qukeysHoldTimeout} onChange={this.setHoldTimeout} />
+                        <Slider min={1} max={500} value={qukeysHoldTimeout} onChange={this.setHoldTimeout} />
+                      </Col>
+                      <Col xs={2} md={1} className="p-0 text-center align-self-center">
+                        <span className="tagsfix">More</span>
+                      </Col>
+                    </Row>
+                  </Form.Group>
+                )}
+              {qukeysMinimumHoldTime >= 0 && (
+                  <Form.Group controlId="QukeysOverlap" className="formGroup">
+                    <Row>
+                      <Col>
+                        <Form.Label>
+                          <Title
+                            text={i18n.keyboardSettings.qukeys.minimumHoldTime}
+                            headingLevel={6}
+                            tooltip={`<h5 class="text-left">${i18n.keyboardSettings.qukeys.minimumHoldTimeTip1}</h5><ul><li class="text-left">${i18n.keyboardSettings.qukeys.minimumHoldTimeTip2}</li><li class="text-left">${i18n.keyboardSettings.qukeys.minimumHoldTimeTip3}</li></ul>`}
+                            tooltipPlacement="bottom"
+                            tooltipSize="wide"
+                          />
+                        </Form.Label>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={2} md={1} className="p-0 text-center align-self-center">
+                        <span className="tagsfix">Less</span>
+                      </Col>
+                      <Col xs={8} md={10} className="px-2">
+                        <Slider min={0} max={500} value={qukeysMinimumHoldTime} onChange={this.setMinimumHoldTime} />
+                      </Col>
+                      <Col xs={2} md={1} className="p-0 text-center align-self-center">
+                        <span className="tagsfix">More</span>
+                      </Col>
+                    </Row>
+                  </Form.Group>
+                )}
+                {qukeysMaxIntervalForTapRepeat >= 0 && (
+                  <Form.Group controlId="QukeysOverlap" className="formGroup">
+                    <Row>
+                      <Col>
+                        <Form.Label>
+                          <Title
+                            text={i18n.keyboardSettings.qukeys.maxIntervalForTapRepeat}
+                            headingLevel={6}
+                            tooltip={`<h5 class="text-left">${i18n.keyboardSettings.qukeys.maxIntervalForTapRepeatTip1}</h5><ul><li class="text-left">${i18n.keyboardSettings.qukeys.maxIntervalForTapRepeatTip2}</li><li class="text-left">${i18n.keyboardSettings.qukeys.maxIntervalForTapRepeatTip3}</li></ul>`}
+                            tooltipPlacement="bottom"
+                            tooltipSize="wide"
+                          />
+                        </Form.Label>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={2} md={1} className="p-0 text-center align-self-center">
+                        <span className="tagsfix">Less</span>
+                      </Col>
+                      <Col xs={8} md={10} className="px-2">
+                        <Slider min={0} max={250} value={qukeysMaxIntervalForTapRepeat} onChange={this.setMaxIntervalForTapRepeat} />
                       </Col>
                       <Col xs={2} md={1} className="p-0 text-center align-self-center">
                         <span className="tagsfix">More</span>

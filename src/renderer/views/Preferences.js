@@ -68,6 +68,8 @@ class Preferences extends React.Component {
       defaultLayer: 126,
       ledIdleTimeLimit: 0,
       qukeysHoldTimeout: 0,
+      qukeysMinimumHoldTime: 0,
+      qukeysMaxIntervalForTapRepeat: 0,
       qukeysOverlapThreshold: 0,
       SuperTimeout: 0,
       SuperRepeat: 20,
@@ -163,6 +165,16 @@ class Preferences extends React.Component {
       this.kbData.qukeysHoldTimeout = holdTimeout;
     });
 
+    await focus.command("qukeys.minimumHoldTime").then(minimumHoldTime => {
+      minimumHoldTime = minimumHoldTime ? parseInt(minimumHoldTime) : 50;
+      this.kbData.qukeysMinimumHoldTime = minimumHoldTime;
+    });
+
+    await focus.command("qukeys.maxIntervalForTapRepeat").then(maxIntervalForTapRepeat => {
+      maxIntervalForTapRepeat = maxIntervalForTapRepeat ? parseInt(maxIntervalForTapRepeat) : 200;
+      this.kbData.qukeysMaxIntervalForTapRepeat = maxIntervalForTapRepeat;
+    });
+
     await focus.command("qukeys.overlapThreshold").then(overlapThreshold => {
       overlapThreshold = overlapThreshold ? parseInt(overlapThreshold) : 80;
       this.kbData.qukeysOverlapThreshold = overlapThreshold;
@@ -217,6 +229,8 @@ class Preferences extends React.Component {
       ledBrightnessUG,
       ledIdleTimeLimit,
       qukeysHoldTimeout,
+      qukeysMinimumHoldTime,
+      qukeysMaxIntervalForTapRepeat,
       qukeysOverlapThreshold,
       SuperTimeout,
       SuperRepeat,
@@ -239,6 +253,8 @@ class Preferences extends React.Component {
     store.set("settings.showDefaults", showDefaults);
     // QUKEYS
     await focus.command("qukeys.holdTimeout", qukeysHoldTimeout);
+    await focus.command("qukeys.minimumHoldTime", qukeysMinimumHoldTime);
+    await focus.command("qukeys.maxIntervalForTapRepeat", qukeysMaxIntervalForTapRepeat);
     await focus.command("qukeys.overlapThreshold", qukeysOverlapThreshold);
     // SUPER KEYS
     await focus.command("superkeys.timeout", SuperTimeout);
