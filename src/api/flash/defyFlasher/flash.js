@@ -116,6 +116,8 @@ class FlashDefyWireless {
       "led.brightness",
       "idleleds.time_limit",
       "qukeys.holdTimeout",
+      "qukeys.minimumHoldTime",
+      "qukeys.maxIntervalForTapRepeat",
       "qukeys.overlapThreshold",
       "mouse.speed",
       "mouse.speedDelay",

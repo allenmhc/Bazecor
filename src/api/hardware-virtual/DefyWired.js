@@ -162,6 +162,14 @@ const DefyWired = {
       data: "250",
       eraseable: true,
     },
+    "qukeys.minimumHoldTime": {
+      data: "50",
+      eraseable: true,
+    },
+    "qukeys.maxIntervalForTapRepeat": {
+      data: "200",
+      eraseable: true,
+    },
     "qukeys.overlapThreshold": {
       data: "80",
       eraseable: true,
@@ -206,7 +214,7 @@ const DefyWired = {
     },
     help: {
       data:
-        "version\r\nkeymap.custom\r\nkeymap.default\r\nkeymap.onlyCustom\r\nsettings.defaultLayer\r\nsettings.valid?\r\nsettings.version\r\nsettings.crc\r\neeprom.contents\r\neeprom.free\r\nled.at\r\nled.setAll\r\nled.mode\r\nled.brightness\r\nled.theme\r\npalette\r\ncolormap.map\r\nidleleds.time_limit\r\nhardware.version\r\nhardware.side_power\r\nhardware.side_ver\r\nhardware.sled_ver\r\nhardware.sled_current\r\nhardware.layout\r\nhardware.joint\r\nhardware.keyscan\r\nhardware.crc_errors\r\nhardware.firmware\r\nhardware.chip_id\r\nqukeys.holdTimeout\r\nqukeys.overlapThreshold\r\nsuperkeys.map\r\nsuperkeys.waitfor\r\nsuperkeys.timeout\r\nsuperkeys.repeat\r\nsuperkeys.holdstart\r\nsuperkeys.overlap\r\nmacros.map\r\nmacros.trigger\r\nhelp\r\nmouse.speed\r\nmouse.speedDelay\r\nmouse.accelSpeed\r\nmouse.accelDelay\r\nmouse.wheelSpeed\r\nmouse.wheelDelay\r\nmouse.speedLimit\r\nlayer.activate\r\nlayer.deactivate\r\nlayer.isActive\r\nlayer.moveTo\r\nlayer.state",
+        "version\r\nkeymap.custom\r\nkeymap.default\r\nkeymap.onlyCustom\r\nsettings.defaultLayer\r\nsettings.valid?\r\nsettings.version\r\nsettings.crc\r\neeprom.contents\r\neeprom.free\r\nled.at\r\nled.setAll\r\nled.mode\r\nled.brightness\r\nled.theme\r\npalette\r\ncolormap.map\r\nidleleds.time_limit\r\nhardware.version\r\nhardware.side_power\r\nhardware.side_ver\r\nhardware.sled_ver\r\nhardware.sled_current\r\nhardware.layout\r\nhardware.joint\r\nhardware.keyscan\r\nhardware.crc_errors\r\nhardware.firmware\r\nhardware.chip_id\r\nqukeys.holdTimeout\r\nqukeys.minimumHoldTime\r\nqukeys.maxIntervalForTapRepeat\r\nqukeys.overlapThreshold\r\nsuperkeys.map\r\nsuperkeys.waitfor\r\nsuperkeys.timeout\r\nsuperkeys.repeat\r\nsuperkeys.holdstart\r\nsuperkeys.overlap\r\nmacros.map\r\nmacros.trigger\r\nhelp\r\nmouse.speed\r\nmouse.speedDelay\r\nmouse.accelSpeed\r\nmouse.accelDelay\r\nmouse.wheelSpeed\r\nmouse.wheelDelay\r\nmouse.speedLimit\r\nlayer.activate\r\nlayer.deactivate\r\nlayer.isActive\r\nlayer.moveTo\r\nlayer.state",
       eraseable: false,
     },
     "mouse.speed": {
