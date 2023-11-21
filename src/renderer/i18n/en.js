@@ -585,7 +585,7 @@ const English = {
       title: "DUAL FUNCTION KEY PARAMETERS",
       holdTimeout: "Dual-Function Keys - Hold timeout",
       holdTimeoutsub: " - From 0 to 65,534 milliseconds",
-      overlapThreshold: "Dual-Function Keys- Overlap Threshold",
+      overlapThreshold: "Dual-Function Keys - Overlap threshold",
       overlapThresholdTip1: "This setting adjusts how much chording you are allowed without triggering the hold function.",
       overlapThresholdTip2:
         "High values let you press the next key before releasing the Dual-Function key without triggering the hold function.",
